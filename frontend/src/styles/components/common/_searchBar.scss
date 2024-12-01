@@ -1,0 +1,95 @@
+.search-bar {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+
+    .search-input-wrapper {
+        position: relative;
+        display: flex;
+        align-items: center;
+        background: var(--bg-secondary);
+        border-radius: 1rem;
+        padding: 0.5rem 1rem;
+        transition: box-shadow 0.3s;
+
+        &.focused {
+            box-shadow: 0 0 0 2px var(--primary-color);
+        }
+
+        .search-icon {
+            font-size: 1.2rem;
+            margin-right: 0.5rem;
+            opacity: 0.5;
+        }
+
+        input {
+            flex: 1;
+            border: none;
+            background: transparent;
+            padding: 0.5rem;
+            color: var(--text-primary);
+            font-size: 1rem;
+
+            &:focus {
+                outline: none;
+            }
+
+            &::placeholder {
+                color: var(--text-secondary);
+            }
+        }
+
+        .clear-btn {
+            background: none;
+            border: none;
+            color: var(--text-secondary);
+            font-size: 1.5rem;
+            cursor: pointer;
+            padding: 0.25rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+
+    .suggestions-dropdown {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        margin-top: 0.5rem;
+        background: var(--bg-secondary);
+        border-radius: 1rem;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+        overflow: hidden;
+        z-index: 100;
+
+        .suggestion-item {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1rem;
+            border: none;
+            background: transparent;
+            color: var(--text-primary);
+            cursor: pointer;
+            transition: background-color 0.2s;
+
+            &:hover {
+                background: var(--bg-hover);
+            }
+
+            .suggestion-icon {
+                opacity: 0.5;
+                font-size: 1rem;
+            }
+
+            .suggestion-text {
+                flex: 1;
+                text-align: left;
+                font-size: 0.9rem;
+            }
+        }
+    }
+} 

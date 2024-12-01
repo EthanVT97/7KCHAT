@@ -1,0 +1,220 @@
+.user-profile {
+    position: relative;
+
+    .profile-trigger {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        padding: 0.5rem;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+        color: var(--text-primary);
+
+        .avatar {
+            position: relative;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            overflow: hidden;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+
+            .avatar-placeholder {
+                width: 100%;
+                height: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background: var(--primary-color);
+                color: white;
+                font-weight: bold;
+                font-size: 1.2rem;
+            }
+
+            .status-indicator {
+                position: absolute;
+                bottom: 0;
+                right: 0;
+                width: 12px;
+                height: 12px;
+                border-radius: 50%;
+                border: 2px solid var(--bg-secondary);
+
+                &.online { background: var(--success-color); }
+                &.busy { background: var(--error-color); }
+                &.away { background: var(--warning-color); }
+            }
+        }
+
+        .user-info {
+            flex: 1;
+            text-align: left;
+
+            .username {
+                display: block;
+                font-weight: 500;
+                font-size: 0.9rem;
+            }
+
+            .role {
+                display: block;
+                font-size: 0.8rem;
+                color: var(--text-secondary);
+            }
+        }
+    }
+
+    .profile-menu {
+        position: absolute;
+        bottom: 100%;
+        left: 0;
+        width: 280px;
+        background: var(--bg-secondary);
+        border-radius: 1rem;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+        margin-bottom: 1rem;
+        overflow: hidden;
+        z-index: 100;
+
+        .menu-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem;
+            border-bottom: 1px solid var(--border-color);
+
+            h3 {
+                margin: 0;
+                font-size: 1.1rem;
+            }
+
+            .close-btn {
+                padding: 0.25rem;
+                background: transparent;
+                border: none;
+                font-size: 1.5rem;
+                cursor: pointer;
+                opacity: 0.5;
+                transition: opacity 0.2s;
+
+                &:hover {
+                    opacity: 1;
+                }
+            }
+        }
+
+        .menu-content {
+            padding: 1rem;
+
+            .status-selector {
+                margin-bottom: 1.5rem;
+
+                h4 {
+                    margin: 0 0 0.5rem;
+                    font-size: 0.9rem;
+                    color: var(--text-secondary);
+                }
+
+                .status-options {
+                    display: flex;
+                    gap: 0.5rem;
+
+                    .status-btn {
+                        flex: 1;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        gap: 0.5rem;
+                        padding: 0.5rem;
+                        border-radius: 0.5rem;
+                        border: 1px solid var(--border-color);
+                        background: var(--bg-primary);
+                        cursor: pointer;
+
+                        &.active {
+                            background: var(--primary-color);
+                            color: white;
+                            border-color: var(--primary-color);
+                        }
+
+                        .icon {
+                            font-size: 1.2rem;
+                        }
+
+                        .label {
+                            font-size: 0.8rem;
+                        }
+                    }
+                }
+            }
+
+            .user-stats {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 1rem;
+                margin-bottom: 1.5rem;
+                padding: 1rem;
+                background: var(--bg-primary);
+                border-radius: 0.5rem;
+
+                .stat-item {
+                    text-align: center;
+
+                    .label {
+                        display: block;
+                        font-size: 0.8rem;
+                        color: var(--text-secondary);
+                        margin-bottom: 0.25rem;
+                    }
+
+                    .value {
+                        font-weight: 600;
+                        font-size: 1rem;
+                    }
+                }
+            }
+
+            .menu-actions {
+                display: flex;
+                flex-direction: column;
+                gap: 0.5rem;
+
+                .action-btn {
+                    display: flex;
+                    align-items: center;
+                    gap: 0.5rem;
+                    padding: 0.75rem;
+                    border-radius: 0.5rem;
+                    border: none;
+                    background: var(--bg-primary);
+                    color: var(--text-primary);
+                    cursor: pointer;
+                    transition: background-color 0.2s;
+
+                    &:hover {
+                        background: var(--bg-hover);
+                    }
+
+                    &.logout {
+                        background: var(--error-color);
+                        color: white;
+
+                        &:hover {
+                            opacity: 0.9;
+                        }
+                    }
+
+                    .icon {
+                        font-size: 1.2rem;
+                    }
+                }
+            }
+        }
+    }
+} 

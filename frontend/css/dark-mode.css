@@ -1,0 +1,24 @@
+[data-theme="dark"] {
+    --background-color: #1a1a1a;
+    --text-color: #ffffff;
+    --card-background: #2d2d2d;
+    --nav-background: #242424;
+    --border-color: #404040;
+}
+
+.theme-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2rem;
+}
+
+[data-theme="dark"] .navbar {
+    background: var(--nav-background);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+}
+
+[data-theme="dark"] .feature-card {
+    background: var(--card-background);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+} 

@@ -1,0 +1,14 @@
+{
+  "name": "latestbot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "testConnection.js",
+  "scripts": {
+    "test": "node testConnection.js"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "mongodb": "^6.11.0",
+    "mongoose": "^7.8.3"
+  }
+}

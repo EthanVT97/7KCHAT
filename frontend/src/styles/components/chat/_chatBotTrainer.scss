@@ -1,0 +1,100 @@
+.chatbot-trainer {
+    background: var(--bg-secondary);
+    border-radius: 16px;
+    padding: 2rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+
+    h2 {
+        margin: 0 0 1.5rem;
+        font-size: 1.5rem;
+        color: var(--text-primary);
+    }
+
+    .form-group {
+        margin-bottom: 1.5rem;
+
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            background: var(--bg-input);
+            color: var(--text-primary);
+            font-size: 1rem;
+            transition: all 0.2s;
+
+            &:focus {
+                outline: none;
+                border-color: var(--primary-color);
+                box-shadow: 0 0 0 3px var(--primary-color-alpha);
+            }
+        }
+
+        textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+    }
+
+    button {
+        width: 100%;
+        padding: 1rem;
+        border: none;
+        border-radius: 8px;
+        background: var(--primary-gradient);
+        color: white;
+        font-size: 1rem;
+        font-weight: 500;
+        cursor: pointer;
+
+        &:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
+        }
+
+        .loading {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+
+            &::after {
+                content: '';
+                width: 1rem;
+                height: 1rem;
+                border: 2px solid rgba(255, 255, 255, 0.3);
+                border-top-color: white;
+                border-radius: 50%;
+                animation: spin 1s linear infinite;
+            }
+        }
+    }
+
+    .feedback {
+        margin-top: 1rem;
+        padding: 1rem;
+        border-radius: 8px;
+        font-size: 0.9rem;
+
+        &.success {
+            background: var(--success-color-alpha);
+            color: var(--success-color);
+        }
+
+        &.error {
+            background: var(--error-color-alpha);
+            color: var(--error-color);
+        }
+    }
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}

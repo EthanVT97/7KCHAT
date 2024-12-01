@@ -1,0 +1,42 @@
+seven7k-chat/
+├── frontend/
+│   ├── public/
+│   │   ├── locales/
+│   │   └── assets/
+│   ├── src/
+│   │   ├── components/
+│   │   │   ├── common/
+│   │   │   ├── chat/
+│   │   │   ├── gambling/
+│   │   │   └── analytics/
+│   │   ├── hooks/
+│   │   ├── contexts/
+│   │   ├── services/
+│   │   ├── utils/
+│   │   ├── styles/
+│   │   └── pages/
+│   ├── tests/
+│   └── config/
+├── backend/
+│   ├── config/
+│   │   ├── database.js
+│   │   ├── redis.js
+│   │   ├── socket.js
+│   │   └── bull.js
+│   ├── controllers/
+│   ├── models/
+│   ├── routes/
+│   ├── services/
+│   │   ├── core/
+│   │   ├── integrations/
+│   │   └── messaging/
+│   ├── middleware/
+│   ├── utils/
+│   └── workers/
+├── shared/
+│   ├── constants/
+│   ├── types/
+│   └── utils/
+├── docs/
+├── scripts/
+└── tests/ 
