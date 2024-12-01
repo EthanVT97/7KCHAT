@@ -5,16 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "node backend/index.js",
-    "dev": "nodemon backend/index.js",
-    "test": "jest",
-    "build": "cd frontend && npm run build",
-    "lint": "eslint .",
-    "format": "prettier --write .",
-    "predeploy": "node backend/scripts/deploy.js",
-    "docker:build": "docker build -t seven7k-chat .",
-    "docker:run": "docker run -p 3000:3000 --env-file .env seven7k-chat",
-    "docker:compose": "docker-compose up -d",
-    "docker:compose:build": "docker-compose up -d --build"
+    "build": "cd frontend && npm install && npm run build",
+    "dev": "nodemon backend/index.js"
   },
   "dependencies": {
     "compression": "^1.7.4",
