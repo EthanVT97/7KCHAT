@@ -3,13 +3,23 @@ FROM node:16
 # Create app directory
 WORKDIR /usr/src/app
 
-# Copy package files
+# Copy backend package files
 COPY package*.json ./
 
-# Install dependencies
+# Install backend dependencies
 RUN npm install
 
-# Copy app source
+# Copy frontend package files (if they exist)
+COPY frontend/package*.json ./frontend/
+
+# Install frontend dependencies (if they exist)
+WORKDIR /usr/src/app/frontend
+RUN if [ -f "package.json" ]; then npm install; fi
+
+# Go back to main directory
+WORKDIR /usr/src/app
+
+# Copy all source files
 COPY . .
 
 # Expose port
