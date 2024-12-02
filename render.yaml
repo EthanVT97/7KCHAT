@@ -2,14 +2,21 @@ services:
   - type: web
     name: seven7k-chat
     env: node
+    plan: free
     buildCommand: npm install && npm run build
     startCommand: npm start
     envVars:
       - key: NODE_ENV
         value: production
       - key: PORT
-        value: 5000
+        value: 3000
       - key: MONGODB_URI
         sync: false
       - key: JWT_SECRET
-        sync: false 
+        sync: false
+      - key: OPENAI_API_KEY
+        sync: false
+    healthCheckPath: /health
+    autoDeploy: true
+    branch: main
+    rootDir: ./ 
