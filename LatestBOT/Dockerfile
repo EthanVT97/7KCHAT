@@ -1,29 +1,20 @@
 FROM node:18
 
-# Create app directory
-WORKDIR /usr/src/app
+# Set working directory
+WORKDIR /app
 
-# Copy backend package files
-COPY package*.json ./
+# Create frontend/public directory and index.html
+RUN mkdir -p frontend/public
+RUN echo "<!DOCTYPE html><html><head><meta charset='utf-8'><title>7K Chat</title></head><body><div id='root'></div></body></html>" > frontend/public/index.html
 
-# Install backend dependencies
-RUN npm install --legacy-peer-deps
-
-# Copy frontend package files (if they exist)
-COPY frontend/package*.json ./frontend/
-
-# Install frontend dependencies (if they exist)
-WORKDIR /usr/src/app/frontend
-RUN if [ -f "package.json" ]; then npm install --legacy-peer-deps; fi
-
-# Go back to main directory
-WORKDIR /usr/src/app
-
-# Copy all source files
+# Copy all files
 COPY . .
 
-# Expose port
-EXPOSE 3000
+# Install dependencies and build frontend
+WORKDIR /app/frontend
+RUN npm install
+RUN npm run build
 
-# Start command
-CMD [ "npm", "start" ] 
+# Start the application
+WORKDIR /app
+CMD ["npm", "start"] 
